@@ -1,139 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mayank Singh Rajput | Developer</title>
+    <title>Mayank Singh Rajput | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-<style>
+    <!-- Lottie Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-/* ===== GLOBAL STYLE ===== */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0d0d0d;
-    color: #00ff88;
-    font-family: "Courier New", monospace;
-}
+    <style>
+        /* Body and animated gradient background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-section {
-    padding: 60px 10%;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            color: #f0f0f0;
+        }
 
-h2 {
-    color: #00ff88;
-    margin-bottom: 20px;
-}
+        /* Header */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            margin: 0;
+            position: relative;
+        }
 
-.typing {
-    font-size: 22px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #00ff88;
-    width: 0;
-    animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
-}
+        /* Hacker-style blinking cursor */
+        header h1::after {
+            content: "|";
+            margin-left: 5px;
+            animation: blink 1s infinite;
+            color: #00ff88;
+        }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
 
-@keyframes blink {
-    50% { border-color: transparent }
-}
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            color: #00ff88; /* hacker-style green */
+        }
 
-/* ===== LINKS ===== */
-a {
-    color: #00ff88;
-    text-decoration: none;
-}
+        .hero-animation {
+            margin-top: 30px;
+        }
 
-a:hover {
-    text-shadow: 0 0 10px #00ff88;
-}
+        /* Section styling */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-/* ===== SKILLS ===== */
-.skills span {
-    display: inline-block;
-    border: 1px solid #00ff88;
-    padding: 8px 15px;
-    margin: 8px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #00ff88; /* hacker-style green */
+            text-align: center;
+        }
 
-.skills span:hover {
-    background: #00ff88;
-    color: black;
-}
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-/* ===== PROJECTS ===== */
-.project {
-    border: 1px solid #00ff88;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 15px 35px #00ff88;
+        }
 
-.project:hover {
-    background: rgba(0,255,136,0.1);
-}
+        /* Skills */
+        .skills {
+            text-align: center;
+        }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #00ff88;
-}
+        .skills span {
+            display: inline-block;
+            background: #111;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s ease;
+            cursor: default;
+        }
 
-</style>
+        .skills span:hover {
+            background: #00ff88;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        /* Project card */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 15px 35px #00ff88;
+        }
+
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #00ff88;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ddd;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            padding: 12px 25px;
+            background-color: #00ff88;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0d0d0d;
+            color: #00ff88;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        /* Footer */
+        footer {
+            background: #141e30;
+            color: #00ff88;
+            padding: 25px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        /* Responsive for Lottie animation */
+        @media screen and (max-width: 768px) {
+            .hero-animation lottie-player {
+                width: 200px !important;
+                height: 200px !important;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="typing">
-        > Hello World! I'm Mayank Singh Rajput
+<header>
+    <h1>Mayank Singh Rajput</h1>
+    <p>> BSc IT Student | Aspiring Software Developer</p>
+
+    <!-- 3D animated boy -->
+    <div class="hero-animation">
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_x62chJ.json"  
+                       background="transparent"  
+                       speed="1"  
+                       style="width: 300px; height: 300px;"  
+                       loop  
+                       autoplay>
+        </lottie-player>
     </div>
-    <p>> FYIT Student | Aspiring Software Developer</p>
-    <p>> Location: Mumbai</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a BSc IT student from RK Talreja College, Mumbai University, passionate about programming,
+            Object-Oriented Programming, and Database Management Systems.
+            I continuously learn and build real-world projects to enhance my development skills.
+        </p>
+    </div>
 </section>
 
-<!-- ABOUT -->
 <section>
-    <h2>> whoami</h2>
-    <p>
-        I am a First Year BSc IT student at RK Talreja College, Mumbai.
-        Passionate about programming, Object-Oriented Programming (OOP),
-        and Database Management Systems. Currently building strong
-        foundations in software development.
-    </p>
-</section>
-
-<!-- EDUCATION -->
-<section>
-    <h2>> education</h2>
-    <p>
-        🎓 BSc Information Technology (FYIT)<br>
-        RK Talreja College, Mumbai<br>
-        Expected Graduation: 2028
-    </p>
-</section>
-
-<!-- SKILLS -->
-<section>
-    <h2>> skills</h2>
+    <h2>Skills</h2>
     <div class="skills">
         <span>C++</span>
         <span>Java</span>
@@ -143,47 +239,42 @@ footer {
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section>
-    <h2>> projects</h2>
+    <h2>Projects</h2>
 
-    <div class="project">
+    <div class="project-card">
         <h3>Movie Rental System</h3>
-        <p>
-            A system designed using programming concepts and database
-            structure to manage movie rentals efficiently.
-        </p>
-        <p>
-            🔗 GitHub:
-            <a href="https://github.com/mayankkanha563/movie-rental-system" target="_blank">
-                View Repository
-            </a>
-        </p>
+        <p>This project is fully documented in a PDF file. Click below to view the complete project.</p>
+
+        <a class="btn"
+           href="https://mayankkanha563.github.io/movie-rental-system/2541051.pdf"
+           target="_blank">
+           View Project PDF
+        </a>
+
+        <a class="btn"
+           href="https://github.com/mayankkanha563/movie-rental-system"
+           target="_blank">
+           View on GitHub
+        </a>
     </div>
 
-    <div class="project">
+    <div class="project-card">
         <h3>Portfolio Website</h3>
-        <p>
-            Personal hacker-style developer portfolio built using HTML & CSS.
-        </p>
+        <p>Hacker-style portfolio website with gradient background, card layout, and glowing skill/project effects.</p>
     </div>
 
 </section>
 
-<!-- CONTACT -->
 <section>
-    <h2>> contact</h2>
+    <h2>Contact</h2>
     <p>📧 Email: <a href="mailto:mayank.kanha563@gmail.com">mayank.kanha563@gmail.com</a></p>
     <p>📱 Phone: 6307752476</p>
-    <p>💻 GitHub: 
-        <a href="https://github.com/mayankkanha563" target="_blank">
-            github.com/mayankkanha563
-        </a>
-    </p>
+    <p>💻 GitHub: <a href="https://github.com/mayankkanha563" target="_blank">github.com/mayankkanha563</a></p>
 </section>
 
 <footer>
-    > © 2026 Mayank Singh Rajput | Built with 💚 in Hacker Mode
+    <p>© 2026 Mayank Singh Rajput | Built with 💚 Hacker-style touches</p>
 </footer>
 
 </body>
