@@ -2,85 +2,130 @@
 <html>
 <head>
     <title>Mayank Singh Rajput | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
     <style>
+        /* General body and font */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #f5f7fa;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
         }
 
         /* Header */
         header {
-            background: linear-gradient(to right, #141e30, #243b55);
+            background: linear-gradient(135deg, #141e30, #243b55);
             color: white;
-            padding: 70px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
-        h1 {
+        header h1 {
             margin: 0;
-            font-size: 42px;
+            font-size: 48px;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Section styling */
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* Sections */
         section {
-            padding: 50px 20px;
-            text-align: center;
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
         }
 
-        /* Cards for About Me and Projects */
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #141e30;
+        }
+
+        /* Card style */
         .card {
             background: white;
-            width: 80%;
-            margin: 20px auto;
             padding: 30px;
+            margin: 20px auto;
             border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        /* Skills tags */
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Skills */
         .skills span {
             display: inline-block;
             background: #243b55;
             color: white;
-            padding: 10px 18px;
+            padding: 10px 20px;
             margin: 8px;
             border-radius: 25px;
             font-size: 14px;
+            font-weight: 500;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            margin: 10px 10px 0 10px;
-            padding: 12px 20px;
-            background-color: #243b55;
+            margin: 10px 10px 0 0;
+            padding: 12px 25px;
+            background-color: #007bff;
             color: white;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s;
         }
 
         .btn:hover {
-            background-color: #141e30;
+            background-color: #0056b3;
+        }
+
+        /* Project card specific */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #141e30;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
         }
 
         /* Footer */
         footer {
             background: #141e30;
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
-        }
-
-        /* Project card specific */
-        .project-card {
-            width: 80%;
-            margin: 20px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
-            background: white;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -95,9 +140,9 @@
     <h2>About Me</h2>
     <div class="card">
         <p>
-            I am a BSc IT student from Mumbai University passionate about programming,
-            Object-Oriented Programming and Database Management Systems.
-            I am continuously learning and building real-world projects to improve my development skills.
+            I am a BSc IT student from Mumbai University, passionate about programming,
+            Object-Oriented Programming, and Database Management Systems.
+            I continuously learn and build real-world projects to enhance my development skills.
         </p>
     </div>
 </section>
@@ -119,16 +164,14 @@
     <!-- Movie Rental System Project Card -->
     <div class="project-card">
         <h3>Movie Rental System</h3>
-        <p>This project is documented in a PDF file. Click below to view the full project.</p>
+        <p>This project is fully documented in a PDF file. Click below to view the complete project.</p>
 
-        <!-- Button to preview PDF in browser -->
         <a class="btn"
            href="https://mayankkanha563.github.io/movie-rental-system/2541051.pdf"
            target="_blank">
            View Project PDF
         </a>
 
-        <!-- Button to open GitHub repo -->
         <a class="btn"
            href="https://github.com/mayankkanha563/movie-rental-system"
            target="_blank">
