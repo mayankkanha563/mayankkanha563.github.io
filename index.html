@@ -3,38 +3,55 @@
 <head>
     <title>Mayank Singh Rajput | Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Lottie Animation -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <style>
-        /* General body and font */
+        /* Body and animated gradient background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background: linear-gradient(to right, #ece9e6, #ffffff);
-            color: #333;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            color: #f0f0f0;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #141e30, #243b55);
-            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 80px 20px;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 48px;
             font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            margin: 0;
         }
 
         header p {
-            margin-top: 10px;
             font-size: 18px;
+            margin-top: 10px;
             letter-spacing: 1px;
         }
 
-        /* Sections */
+        .hero-animation {
+            margin-top: 30px;
+        }
+
+        /* Section styling */
         section {
             padding: 60px 20px;
             max-width: 1000px;
@@ -45,33 +62,66 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             margin-bottom: 30px;
-            color: #141e30;
+            color: #f0f0f0;
+            text-align: center;
         }
 
-        /* Card style */
+        /* Cards */
         .card {
-            background: white;
+            background: rgba(255,255,255,0.05);
             padding: 30px;
             margin: 20px auto;
             border-radius: 15px;
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
         }
 
         /* Skills */
         .skills span {
             display: inline-block;
-            background: #243b55;
+            background: #007bff;
             color: white;
             padding: 10px 20px;
             margin: 8px;
             border-radius: 25px;
             font-size: 14px;
             font-weight: 500;
+        }
+
+        /* Project card */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ddd;
+            text-align: center;
         }
 
         /* Buttons */
@@ -91,34 +141,6 @@
             background-color: #0056b3;
         }
 
-        /* Project card specific */
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #f8f9fa;
-            padding: 30px;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #141e30;
-        }
-
-        .project-card p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
         /* Footer */
         footer {
             background: #141e30;
@@ -127,6 +149,14 @@
             text-align: center;
             margin-top: 50px;
         }
+
+        /* Responsive for Lottie animation */
+        @media screen and (max-width: 768px) {
+            .hero-animation lottie-player {
+                width: 200px !important;
+                height: 200px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -134,6 +164,17 @@
 <header>
     <h1>Mayank Singh Rajput</h1>
     <p>BSc IT Student | Aspiring Software Developer</p>
+
+    <!-- 3D animated boy -->
+    <div class="hero-animation">
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_x62chJ.json"  
+                       background="transparent"  
+                       speed="1"  
+                       style="width: 300px; height: 300px;"  
+                       loop  
+                       autoplay>
+        </lottie-player>
+    </div>
 </header>
 
 <section>
@@ -161,7 +202,7 @@
 <section>
     <h2>Projects</h2>
 
-    <!-- Movie Rental System Project Card -->
+    <!-- Movie Rental System -->
     <div class="project-card">
         <h3>Movie Rental System</h3>
         <p>This project is fully documented in a PDF file. Click below to view the complete project.</p>
