@@ -8,20 +8,27 @@
             margin: 0;
             background-color: #f5f7fa;
         }
+
+        /* Header */
         header {
             background: linear-gradient(to right, #141e30, #243b55);
             color: white;
             padding: 70px 20px;
             text-align: center;
         }
+
         h1 {
             margin: 0;
             font-size: 42px;
         }
+
+        /* Section styling */
         section {
             padding: 50px 20px;
             text-align: center;
         }
+
+        /* Cards for About Me and Projects */
         .card {
             background: white;
             width: 80%;
@@ -30,6 +37,8 @@
             border-radius: 15px;
             box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
         }
+
+        /* Skills tags */
         .skills span {
             display: inline-block;
             background: #243b55;
@@ -39,23 +48,39 @@
             border-radius: 25px;
             font-size: 14px;
         }
+
+        /* Buttons */
         .btn {
             display: inline-block;
-            margin-top: 15px;
+            margin: 10px 10px 0 10px;
             padding: 12px 20px;
             background-color: #243b55;
             color: white;
             border-radius: 8px;
             text-decoration: none;
+            font-weight: bold;
         }
+
         .btn:hover {
             background-color: #141e30;
         }
+
+        /* Footer */
         footer {
             background: #141e30;
             color: white;
             padding: 20px;
             text-align: center;
+        }
+
+        /* Project card specific */
+        .project-card {
+            width: 80%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+            background: white;
         }
     </style>
 </head>
@@ -91,24 +116,25 @@
 <section>
     <h2>Projects</h2>
 
-    <div class="project">
-   <h3>Movie Rental System</h3>
-   <p>All details of the project are in this PDF.</p>
+    <!-- Movie Rental System Project Card -->
+    <div class="project-card">
+        <h3>Movie Rental System</h3>
+        <p>This project is documented in a PDF file. Click below to view the full project.</p>
 
-   <!-- Button to preview PDF in browser -->
-   <a class="btn"
-      href="https://mayankkanha563.github.io/movie-rental-system/2541051.pdf"
-      target="_blank">
-      View Project PDF
-   </a>
+        <!-- Button to preview PDF in browser -->
+        <a class="btn"
+           href="https://mayankkanha563.github.io/movie-rental-system/2541051.pdf"
+           target="_blank">
+           View Project PDF
+        </a>
 
-   <!-- Button to open GitHub repo -->
-   <a class="btn"
-      href="https://github.com/mayankkanha563/movie-rental-system"
-      target="_blank">
-      View on GitHub
-   </a>
-</div>
+        <!-- Button to open GitHub repo -->
+        <a class="btn"
+           href="https://github.com/mayankkanha563/movie-rental-system"
+           target="_blank">
+           View on GitHub
+        </a>
+    </div>
 
 </section>
 
